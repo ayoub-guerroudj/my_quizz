@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div id="container">
+        {% for categorie in categorie %}            
+            <div class="card" style="width: 18rem; margin-bottom: 2rem; background: #f8f9fa;">
+                <img class="card-img-top" style="" src="{{ categorie.imageUrl }}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title"><a style="color: #007bff; font-size: 17px;" href="/quizz/{{ categorie.id }}">{{ categorie.name }}</a></h5>
+                    <p class="card-text" style="color: rgba(0,0,0,.5); font-size: 15px; text-align: justify;">Jouez à des milliers de quizz sur des thèmes variés et créez un quiz gratuitement sur MyQuiz !</p>
+                    <a href="#" class="btn btn-outline-info">Lancer le quiz !</a>
+                </div>
+            </div> 
+        {% endfor %}
+</div>
+{% endblock %}
+
+{% block stylesheets %}
+<style>
+    #container { 
+        margin: 2em auto; 
+        max-width: 1000px; 
+        width: 95%; 
+        display: flex; 
+        justify-content: space-around; 
+        flex-direction: row; 
+        flex-wrap: wrap;   
+        align-items: stretch;
+    }
+    #flex-card { display: flex; justify-content: space-between; flex-direction: row; }
+
+    @media (min-width: 768px) {
+        #wrapper { width: 80%; margin: 2em auto; padding}
+        @-webkit-keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
+        @keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
+        .sf-toolbar { opacity: 0; -webkit-animation: fade-in 1s .2s forwards; animation: fade-in 1s .2s forwards;}
+    }
+</style>
+{% endblock %}

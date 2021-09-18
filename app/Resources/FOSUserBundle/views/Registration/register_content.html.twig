@@ -1,0 +1,28 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div id="wrapper">
+    <div id="container">
+    <form action="{{ path('fos_user_registration_register') }}" method="POST">
+    <div class="form-group" id="fos_user_registration_form">
+        <h5 style="font-size: 16px;" class="form-signin-heading">Inscription</h5>
+        <input style="margin-bottom: 0.5rem; font-size: 15px;" {{ form_widget(form.email, { 'attr': {'class': 'form-control', 'placeholder': 'form.email'|trans } }) }}
+        {{ form_errors(form.email) }}
+
+        <input style="margin-bottom: 0.5rem; font-size: 15px;" {{ form_widget(form.username, { 'attr': {'class': 'form-control', 'placeholder': 'form.username'|trans } }) }}
+        {{ form_errors(form.username) }}
+
+        <input style="margin-bottom: 0.5rem; font-size: 15px;" {{ form_widget(form.plainPassword.first, { 'attr': {'class': 'form-control', 'placeholder': 'form.password'|trans } }) }}
+        {{ form_errors(form.plainPassword.first) }}
+
+        <input style="margin-bottom: 0.5rem; font-size: 15px;" {{ form_widget(form.plainPassword.second, { 'attr': {'class': 'form-control', 'placeholder': 'form.password_confirmation'|trans } }) }}
+        {{ form_errors(form.plainPassword.second) }}
+
+        {{ form_rest(form) }}
+
+    </div>
+    <div>
+        <button style="font-size: 15px;" class="btn btn-outline-primary" type="submit" value="{{ 'registration.submit'|trans }}">S'inscrire</button>
+    </div>
+    </form>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ quizz.name }}
+    {% for question in questions %}
+    <li>{{ question.question }}</li>
+        {% for reponse in question.reponses %}
+            - {{ reponse.reponse }}
+            {% endfor %}
+    {% endfor %}
+
+{% endblock %}

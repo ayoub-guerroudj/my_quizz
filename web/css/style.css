@@ -1,0 +1,10 @@
+body { 
+    background: #F5F5F5; 
+    font-family: 'Raleway', sans-serif; 
+}
+a { 
+    color: #0000F0; 
+}
+a:hover { 
+    text-decoration: none; 
+}
